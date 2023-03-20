@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ZenObservable } from 'zen-observable-ts';
+import { APIService } from './API.service';
+
 
 @Component({
   selector: 'app-root',
@@ -7,4 +10,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'amplifyApp';
+  constructor(private api:APIService){}
+  
 }

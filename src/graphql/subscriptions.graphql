@@ -1,0 +1,31 @@
+# this is an auto generated file. This will be overwritten
+subscription OnCreateStudents($filter: ModelSubscriptionStudentsFilterInput) {
+  onCreateStudents(filter: $filter) {
+    id
+    name
+    department
+    rank
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateStudents($filter: ModelSubscriptionStudentsFilterInput) {
+  onUpdateStudents(filter: $filter) {
+    id
+    name
+    department
+    rank
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteStudents($filter: ModelSubscriptionStudentsFilterInput) {
+  onDeleteStudents(filter: $filter) {
+    id
+    name
+    department
+    rank
+    createdAt
+    updatedAt
+  }
+}

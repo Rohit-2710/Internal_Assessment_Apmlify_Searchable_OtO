@@ -1,0 +1,74 @@
+<div class="container-fluid">
+    <div class="table table-striped">
+        <thead>
+            <tr>
+                
+                <th>Name</th>
+                <th>Department</th>
+                <th>Rank</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let d of data">
+                
+                <td>{{d.name}}</td>
+                <td>{{d.department}}</td>
+                <td>{{d.rank}}</td>
+                <td><button class="btn btn-danger" (click)="delete(d.id.toString())">Delete</button>
+                    <button class="btn btn-primary">Update</button>
+                </td>
+            </tr>
+        </tbody>
+
+    </div>
+    <div class="form">
+        <form 
+        [formGroup]="myForm"
+        required
+        (ngSubmit)="add(myForm.value)">
+        <div class="form">
+            <label for="Name" class="label">Enter Name</label>
+            <input type="text" id="Name" formControlName="name">
+
+            <label for="department" class="label">Enter Department</label>
+            <input type="text" id="department" formControlName="department">
+
+            <label for="rank" class="label">Enter Rank</label>
+            <input type="text" id="rank" formControlName="rank">
+
+            <button class="btn btn-primary" value="submit" [disabled]="myForm.invalid">Submit data</button>
+
+            
+
+
+        </div>
+    </form>
+    </div>
+    <div class="table table-striped">
+        <thead>
+            <tr>
+                
+                <th>Name</th>
+                <th>Department</th>
+                <th>Rank</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let d of onSearch">
+                
+                <td>{{d.name}}</td>
+                <td>{{d.department}}</td>
+                <td>{{d.rank}}</td>
+                <td><button class="btn btn-danger" (click)="delete(d.id.toString())">Delete</button></td>
+            </tr>
+        </tbody>
+        <form class="form-group">
+            <input type="text" placeholder="Enter name for search" [(ngModel)]="name" name="name">
+            <button class="btn btn-primary" (click)="search()" >Search</button>
+        </form>
+</div>
+
+
+
